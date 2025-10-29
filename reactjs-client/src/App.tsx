@@ -12,9 +12,11 @@ function App() {
   return (
     <div className="App">
       <ConnectedRouter history={history} >
+        <Switch>
           <Route path="/">
             <ProductList />
           </Route>
+        </Switch>
       </ConnectedRouter>
     </div>
   );
