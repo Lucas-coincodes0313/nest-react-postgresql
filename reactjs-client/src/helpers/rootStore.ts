@@ -13,7 +13,8 @@ const reducer = combineReducers({
 })
 
 export const rootStore = configureStore({
-    reducer: reducer
+    reducer: reducer,
+    middleware: [...getDefaultMiddleware(), routerMiddleware(history)]
 })
 
 export type IReducerState = ReturnType<typeof rootStore.getState>;
