@@ -17,6 +17,7 @@ export class ProductEntity {
     quantity: number;
 
     @Column({ type: 'date' })
+    @Column()
     lastUpdate: Date;
 
     @BeforeInsert()
