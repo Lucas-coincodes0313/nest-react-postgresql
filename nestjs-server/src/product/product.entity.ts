@@ -12,6 +12,8 @@ export class ProductEntity {
     @Column({ type: 'money' })
     price: number;
 
+    @Column({ type: 'integer' })
+    @Column()
     quantity: number;
 
     @Column({ type: 'date' })
