@@ -10,7 +10,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={rootStore}>
+      <div className="container-fluid">
         <App />
+      </div>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
