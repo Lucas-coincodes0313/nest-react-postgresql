@@ -99,3 +99,24 @@ export class ProductListComponent extends Component<IProductListProps> {
         )
     }
 }
+
+
+const mapStateToProps = (state: IReducerState) => {
+    return {
+        ...state.productStore
+    };
+}
+
+const mapDispatchToProps = (dispatch: any) => {
+    return {
+        getProductList: () => dispatch(getProductList()),
+        createProduct: (productModel: IProductCreate) => dispatch(createProduct(productModel)),
+        updateProduct: (productId: string, productModel: IProductUpdate) => dispatch(updateProduct(productId, productModel)),
+        deleteProduct: (productId: string) => dispatch(deleteProduct(productId))
+    }
+}
+
+export const ProductList = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(ProductListComponent);
