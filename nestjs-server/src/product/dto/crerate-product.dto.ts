@@ -1,4 +1,4 @@
 export interface CreateProductDto {
-    name: string;
-    price: number;
+    readonly name: string;
+    readonly price: number;
 }
