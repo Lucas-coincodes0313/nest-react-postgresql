@@ -3,4 +3,6 @@ export interface IProductListProps extends IProductStoreState {
     getProductList(): Promise<void>;
     createProduct(productModel: IProductCreate): Promise<void>;
     updateProduct(productId: string, productModel: IProductUpdate): Promise<void>;
+    // Additional Func
+    deleteProduct(productId: string): Promise<void>;
 }
