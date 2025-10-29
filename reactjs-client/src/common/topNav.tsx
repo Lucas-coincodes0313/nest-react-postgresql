@@ -4,7 +4,8 @@ export class TopNav extends Component {
     render() {
         return (
             <Navbar bg="dark">
-                <div className="text-white" href="#">Products</div>
+                {/* Navbar.Brand */}
+                <Navbar.Brand className="text-white" href="#">Products</Navbar.Brand>
             </Navbar>
         )
     }
