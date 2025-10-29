@@ -6,6 +6,11 @@ export class HttpHelpers {
         return new Promise((resolve, reject) => {
             axios.get(api).then((response) => {
                 resolve(response.data);
+            }).catch((err) => {
+                if (err.response) {
+                    reject({ message: err.response.data.error })
+                } else
+                    reject({ message: 'An error occured' })
             });
         });
     }
@@ -14,6 +19,11 @@ export class HttpHelpers {
         return new Promise((resolve, reject) => {
             axios.post(api, body).then((response) => {
                 resolve(response.data);
+            }).catch((err) => {
+                if (err.response) {
+                    reject({ message: err.response.data.error })
+                } else
+                    reject({ message: 'An error occured' })
             });
         });
     }
@@ -23,6 +33,11 @@ export class HttpHelpers {
             api = `${api}/${id}`;
             axios.put(api, body).then((response) => {
                 resolve(response.data);
+            }).catch((err) => {
+                if (err.response) {
+                    reject({ message: err.response.data.error })
+                } else
+                    reject({ message: 'An error occured' })
             });
         });
     }
@@ -32,6 +47,11 @@ export class HttpHelpers {
             api = `${api}/${id}`;
             axios.delete(api).then((response) => {
                 resolve(response.data);
+            }).catch((err) => {
+                if (err.response) {
+                    reject({ message: err.response.data.error })
+                } else
+                    reject({ message: 'An error occured' })
             });
         });
     }
